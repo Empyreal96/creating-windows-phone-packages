@@ -32,6 +32,8 @@ This file is essential as without it you cannot make your packages, it lists Fil
 ```
 This is the basic structure of the file, you are **required** to fill out the `Owner=""`, `Component=""` and `SubComponent=""` tags. Think of it as `Owner.Component.SubComponent.cab` so for this guide it will be `Empyreal96.MainOS.Tutorial_Package.cab` but you can experiment and call it whatever you want. 
 
+There are other Header options you can add, i.e `Partition=""` is the partition you are targeting the package for so `EFIESP`, `MAINOS` or `DATA`
+
 - Now time to add a file! 
 We place objects we want to include between the `<OSComponent> </OSComponent>` tags, again there are other options but for now we will keep it simple.
 
