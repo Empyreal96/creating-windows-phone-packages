@@ -49,7 +49,7 @@ We place objects we want to include between the `<OSComponent> </OSComponent>` t
 ```
 As you can see it's pretty straightforard: we add the `<Files>  </Files>` tags, and files you wish to add go between them with a `<File />` section, **Source** is where the file is stored on your PC, **DestinationDir* is the desired location on the Phone. You can add multiple files between the `<Files>` tag.
 
-You will notice `$(runtime.CommonFiles)` is used here, this may seem confusing but its a **Macro**, valid Macros can be found in the `C:\WPCT\bin\i386\pkggen.cfg.xml` file of W10M Tools. The `runtime.CommonFiles` part just tells the Phone to use the `C:\PROGRAMS\CommonFiles\` folder.
+You will notice `$(runtime.CommonFiles)` is used here, this may seem confusing but its a **Macro**, valid Macros can be found in the `C:\WPCT\bin\i386\pkggen.cfg.xml` file of W10M Tools. The `runtime.CommonFiles` part just tells the Phone to use the `C:\PROGRAMS\CommonFiles\` folder. We need to use these **Macros** when setting the `DestinationDir`
 
 - Now onto Registry entries!
 ```
