@@ -113,8 +113,10 @@ Now we have our definition file, we need to create the package, but this has som
   - `set "WPDKCONTENTROOT=C:\WPCT`
   - `installoemcerts.cmd`
 *This is required first time to install the Test Certificates that will be used for signing*
-- Now we need to set the date to 2014, type:
+- Now we need to set the date to 2014 and configure some signing settings, type:
   - `date 01-01-2014`
+  - `set SIGN_OEM=1`
+  - `set SIGN_WITH_TIMESTAMP=0`
 - It's time to create the package by typing:
   - `PkgGen.exe "C:\WPCT\Tools\bin\i386\XML\Empyreal96.MainOS.Tutorial_Package.pkg.xml" /version:1.0.0.0 /config:pkggen.cfg.xml /output:C:\WPCT\Tools\bin\i386\spkg_out`
   
