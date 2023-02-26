@@ -123,7 +123,7 @@ Now we have our definition file, we need to create the package, but this has som
 
 
 ### Pushing the package to device
-*As stated in the [requirements](#requirements] we need an unlocked bootloader, otherwise you will get a `CERT_E_CHAINING` error when deploying*
+*As stated in the [requirements](#requirements) we need an unlocked bootloader, otherwise you will get a `CERT_E_CHAINING` error when deploying*
 
 - Set your phone date anywhere between 01-01-2014 and 2016.
 - Copy/Move your new `.cab` file to a folder, make sure it is the *only* file in the folder.
