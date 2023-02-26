@@ -47,5 +47,5 @@ This guide will go though how to setup and create a package that will install an
 </Package> 
 ```
 
-- Make sure to have the `Source` pointing to where your created ppkg file is, keep `DestinationDir` as `$(runtime.windows)\provisioning\packages`/
+- Make sure to have the `Source` pointing to where your created ppkg file is, keep `DestinationDir` as `$(runtime.windows)\provisioning\packages`. Save the xml as something like `Owner.MainOS.AppName.Provisioning.pkg.xml`
 - Now build your package with `PkgGen` and push to device just as you did in the [Creating Packages](https://github.com/Empyreal96/creating-windows-phone-packages) guide.
