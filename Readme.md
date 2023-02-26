@@ -8,7 +8,7 @@ This guide will detail how to create your own update packages for Windows 10 Mob
 - XML definition file *(This will be explained)*
 
 ## Guide
-*I will presume you have extracted the W10M Tools into a folder of your choice, I will choose `C:\WPCT\bin\i386` for this guide.*
+*I will presume you have extracted the W10M Tools into a folder of your choice, I will choose `C:\WPCT\Tools\bin\i386` for this guide.*
 
 ### Creating your XML definition manifest
 This file is essential as without it you cannot make your packages, it lists Files and Registry entries that you choose, and adds them to the package. There are other possibilities on what to add but for now I will keep it simple (I am still learning how to add the other options)
@@ -50,7 +50,7 @@ We place objects we want to include between the `<OSComponent> </OSComponent>` t
 ```
 As you can see it's pretty straightforard: we add the `<Files>  </Files>` tags, and files you wish to add go between them with a `<File />` section, **Source** is where the file is stored on your PC, **DestinationDir** is the desired location on the Phone. You can add multiple files between the `<Files>` tag.
 
-You will notice `$(runtime.CommonFiles)` is used here, this may seem confusing but its a **Macro**, valid Macros can be found in the `C:\WPCT\bin\i386\pkggen.cfg.xml` file of W10M Tools. The `runtime.CommonFiles` part just tells the Phone to use the `C:\PROGRAMS\CommonFiles\` folder. We need to use these **Macros** when setting the `DestinationDir`
+You will notice `$(runtime.CommonFiles)` is used here, this may seem confusing but its a **Macro**, valid Macros can be found in the `C:\WPCT\Tools\bin\i386\pkggen.cfg.xml` file of W10M Tools. The `runtime.CommonFiles` part just tells the Phone to use the `C:\PROGRAMS\CommonFiles\` folder. We need to use these **Macros** when setting the `DestinationDir`
 
 - Now onto Registry entries!
 ```
@@ -103,12 +103,12 @@ Again we have a **Macro** used (Refer to pkggen.cfg.xml for more), `$(hklm.softw
 </Package> 
 ```
 
-That is now complete, Save the XML file to somewhere safe, I name my manifests like this: `Owner.Component.SubComponent.pkg.xml` so this will be saved as `Empyreal96.MainOS.Tutorial_Package.pkg.xml` in `C:\WPCT\bin\i386\XML`
+That is now complete, Save the XML file to somewhere safe, I name my manifests like this: `Owner.Component.SubComponent.pkg.xml` so this will be saved as `Empyreal96.MainOS.Tutorial_Package.pkg.xml` in `C:\WPCT\Tools\bin\i386\XML`
 
 ### Creating the Package
 Now we have our definition file, we need to create the package, but this has some setup required beforehand.
 
-- Open Command Prompt as Admin to `C:\WPCT\bin\i386`
+- Open Command Prompt as Admin to `C:\WPCT\Tools\bin\i386`
 - (First time only) Run the following commands
   - `set "WPDKCONTENTROOT=C:\WPCT`
   - `installoemcerts.cmd`
@@ -116,10 +116,10 @@ Now we have our definition file, we need to create the package, but this has som
 - Now we need to set the date to 2014, type:
   - `date 01-01-2014`
 - It's time to create the package by typing:
-  - `PkgGen.exe "C:\WPCT\bin\i386\XML\Empyreal96.MainOS.Tutorial_Package.pkg.xml" /version:1.0.0.0 /config:pkggen.cfg.xml /output:C:\WPCT\bin\i386\spkg_out`
+  - `PkgGen.exe "C:\WPCT\Tools\bin\i386\XML\Empyreal96.MainOS.Tutorial_Package.pkg.xml" /version:1.0.0.0 /config:pkggen.cfg.xml /output:C:\WPCT\Tools\bin\i386\spkg_out`
   
-  *(You can choose anywhere to save the output file, I just create the folder and use `C:\WPCT\bin\i386\spkg_out` as my personal preference)*
-- If all goes well then your newly created package will be in `C:\WPCT\bin\i386\spkg_out`, this will create both an `.spkg` and a `.cab` file for you to use, `.spkg` is best for WP8.x devices and the `.cab` is best for W10M devices
+  *(You can choose anywhere to save the output file, I just create the folder and use `C:\WPCT\Tools\bin\i386\spkg_out` as my personal preference)*
+- If all goes well then your newly created package will be in `C:\WPCT\Tools\bin\i386\spkg_out`, this will create both an `.spkg` and a `.cab` file for you to use, `.spkg` is best for WP8.x devices and the `.cab` is best for W10M devices
 
 
 ### Pushing the package to device
