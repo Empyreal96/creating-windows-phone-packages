@@ -119,3 +119,8 @@ Now we have our definition file, we need to create the package, but this has som
   
   *(You can choose anywhere to save the output file, I just create the folder and use `C:\WPCT\bin\i386\spkg_out` as my personal preference)*
 - If all goes well then your newly created package will be in `C:\WPCT\bin\i386\spkg_out`, this will create both an `.spkg` and a `.cab` file for you to use, `.spkg` is best for WP8.x devices and the `.cab` is best for W10M devices
+
+
+### Extras
+
+- [Creating a package that provisions an App install]()
