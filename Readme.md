@@ -123,4 +123,4 @@ Now we have our definition file, we need to create the package, but this has som
 
 ### Extras
 
-- [Creating a package that provisions an App install]()
+- [Creating a package that provisions an App install](https://github.com/Empyreal96/creating-windows-phone-packages/blob/main/Adding%20an%20application%20to%20package.md)
