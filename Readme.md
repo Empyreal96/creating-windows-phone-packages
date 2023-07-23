@@ -110,11 +110,11 @@ Now we have our definition file, we need to create the package, but this has som
 
 - Open Command Prompt as Admin to `C:\WPCT\Tools\bin\i386`
 - (First time only) Run the following commands
-  - `set "WPDKCONTENTROOT=C:\WPCT`
+  - `set "WPDKCONTENTROOT=C:\WPCT"`
   - `installoemcerts.cmd`
 *This is required first time to install the Test Certificates that will be used for signing*
 - Now we need to set the date to 2014 and configure some signing settings, type:
-  - `date 01-01-2014`
+  - `date 01-01-2014` *(note: Windows sometimes resets the time back after running this command, if it does run it again)*
   - `set SIGN_OEM=1`
   - `set SIGN_WITH_TIMESTAMP=0`
 - It's time to create the package by typing:
